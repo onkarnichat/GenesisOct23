@@ -9,10 +9,13 @@ public class CustomerDetailsTest {
         CustomerDetailsObj1.increaseEyeNumber(0.5);
         CustomerDetailsObj1.showCustomerDetails();*/
         
-        Specks specksObj1=new Specks();
+        Specks specksObj=new Specks();
         PowerLenseNum powerLenseNumobj1=new PowerLenseNum("distance", 3.25f, 3.5f, "Anti Glare");
         Frames framesObj1=new Frames("Fibre", "Green", 250.0f, "Rimless");
-        specksObj1.vision(CustomerDetailsObj1,powerLenseNumobj1, framesObj1);
+        specksObj.vision(CustomerDetailsObj1,powerLenseNumobj1, framesObj1);
+        PowerLenseNum powerLenseNumobj2=new PowerLenseNum("near", 6.21f, 4.5f, "Blue Cut");
+        Frames framesObj2=new Frames("metal", "Black", 450.0f, "Full Rim");
+        specksObj.vision(CustomerDetailsObj2, powerLenseNumobj2, framesObj2);
 
     }
 }
@@ -104,7 +107,7 @@ class CustomerDetails{
 }
 
 class EyeWear{
-
+	
 }
 
 class Lenses{
