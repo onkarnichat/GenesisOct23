@@ -1,0 +1,191 @@
+generally car has 90-100 electronic component.
+Autosar-AUTomotive Open System ARchitecture.
+oem=Original equipment manufacturer.
+why autosar:-
+1.reusibility of code=int traditional way, every time we replace the hardware we have code from scratch every time. but withh the use of autosar we can 
+reuse the code.
+
+2.standardisation of exchange formate=one apllication software development use m/s while use km/hr hence it will create conflict.
+it will provide standard parameters to develope software.
+the purpose of autosar is to decouple software from harware.where hardware is standardise and software will be customised.
+microcontroller-gives the harware access.
+
+Autosar has 3 layers namely
+1.Appication layer
+2.Run time environment
+3.basic software
+
+basic software further divided into following layers-
+1.service layer-takes care of dignostics
+2.ECU Abstraction layer-responsible for seperating the apllication from ecu(electronic controll unit)
+3.complex drivers
+4.Micro controller abstraction layer
+
+
+1.service layer=
+i)System Service-manages operating system.
+ii)memory service-manages memory services
+iii)crypto services-manages crypto services and securities.
+iv)off-board communication services=
+v)communication services-communication stack.
+
+2.ECU Abstraction layer-
+i)onboard device abstraction.
+ii)memot\ry hardware abstraction
+iii)crypto hardware abstraction
+iv)wireless communication HW abstraction
+v)communication hardware abstraction
+vi)i/o hardware abstraction
+vii)complex driver
+
+3.microcontroller abstraction layer-
+i)System driver
+ii)memory driver
+iii)crypto driver
+v)communication diver
+vi)i/o driver
+
+
+basic software module=
+-operating system
+-access to non volatile memory
+-communication via control area network(can),local internet network(lin),
+flexRay and Ethernet
+-Handling the diagnostics
+-Access to i/o port
+-System service like ECU state management
+-access the features of ECU.
+
+
+micro-controller abstraction layer-
+it is the lowest layer of the basic software.they provide all the library that is necessary for acessing the microcontroller.It provide interface or the api calls. To configure microcontroller use these api calls.
+It seperates the other components from the microcontrolller.it makes application layer independent of the controller.
+micro controller dependent.
+
+ECU abstraction layer-
+appliaction above ecu may not be in same ecu, this ecu abstraction layer provide the api calls to the application in diffrent ecu where application is present.
+make higher software layers independent of ECU hardware layout.
+impl-micro.controll. independent,ECU hardware dependent.
+upper interface-micro cont. and ECU hardware  independent.
+
+complex drivers layer-
+Runtime environsment can confg. directly microcontroller using the complex driver.
+it spans from hardware ti RTE.
+it provides the librarires or functionalities which are not specified in autosar standards.
+it generally depends in micro controller and ECU
+
+service layer-
+i)System Service-manages operating system.
+ii)memory service-manages memory services
+iii)crypto services-manages crypto services and securities.
+iv)off-board communication services=
+v)communication services-communication stack.
+ECU and micro controll. independent.
+
+RTE Layer-
+it is responsible for effective communication between software component in same ECUS e.g. application software component,actuator software component,sensor software component or
+communication between software component and basic software.
+
+Application layer-
+it contains software components which realize the application functionality of ECU.this is the piece of soft. that OEM is ready to pay.sometime oem biuld app.to protect 
+IP.
+
+Autosar methodology=
+1.Autosar Authoring tool=
+i)swc s=description
+ii)ECU resource appl.
+iii)System desc,ststem desc mappingf 
+
+2.swc impl-
+i)model based
+iii)manual coding
+BSW Cnfg
+
+
+3.ECU conf.
+ESU cong.
+53.33
+
+ports-
+sender-receiver pport/rport
+client server ppoer/rport
+
+the implementation architecture of swc is formally define in terms of runnable entities.they are corrs. to procedure and exec on a specific event such as periodic activation or reception of new input value.
+during system design swc are integrated with their envi. based on virtual function bus.
+Automic soft. compo.=smalletst soft.compo. which remain in one ECU only cannot split into various ECUs
+vfb is just systematic diagram while runtime envi. is actual impl.
+app soft. componet has 8 ports . these 8 ports ar called as interface
+standardized autosar interface-syntax and semantics through which data is accessed or received(API  calls). 
+------------------------------------------------------------------------------
+automotive trends
+1.mobility concepts-car sharing,ride sharing,vehicle subscription,where we can order the software for vehicle and it is available at the location.
+
+2.electrification-smart system where car come home and recharge itself.
+
+3.automoted driving-using complex algorithm,make the driving automated.
+
+enablers for automotivve trends-
+1.connectivity-connected to other vehicles
+2.offbord eco system-offered cloud services for data collection and downloading high resolution map material.
+3.HPCs on board-high perf. computing are available.
+
+->embedded system=
+-safe
+-secure
+-embedde integration and debugging
+automotive supply chain
+automotive communication protocol
+automotive diagnostics
+developed using iso 26 26 2
+
+have to be conncted with
+->cloud/backend
+1.suppport high performance processors
+2.high bandwidth
+3.service based archi.
+4.open source agile dev.
+5.dynamic and updatable.
+
+bridge element-
+->onbord supercomputers
+multipurpose comp. servers
+head unit,infotainment
+automated driving
+mastered by OEM.
+cobine feature of both.
+
+autosar classic-
+static
+monolithic/top-down
+model-based
+confg. at runtime
+optimized effici.
+
+autosar adaptive-
+dymamic
+modular/[aralle
+model based and software based
+config. at runtime
+optimized towards fleexibility.
+5.internet
+
+-application run on top of the autosar runime 
+it is set of apis
+
+paradigm changes due to-
+use of c++
+service oriented comm. as a base for service oriented archi.
+posix operating system
+planned dynamics
+
+ucm module s responsible for update,delete ind install proce. for software
+ota cleint coonect with ata server then it is passed to ucm 
+ara::com is used for using dynamic sevice
+user application
+	|
+	|
+OEM/tier one specific runtime
+framework
+	|
+	|
+(virtual)machine/hardware.
